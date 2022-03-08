@@ -18,7 +18,7 @@ const some = array.some((product) => product.price < 1000);
 
 /** .every -> verifica se todos os elementos cumprem a regra da condição */
 const every = array.every((product) => product.price >= 1000);
-// console.log(every);
+// console.log({ every });
 
 /** .map -> percorre o array e executa algo em cima de cada elemento percorrido criando um novo array com o mesmo número de posições */
 const map = array.map((product) => ({
@@ -29,4 +29,10 @@ const map = array.map((product) => ({
 
 /** .filter -> filtra os elementos do nosso array que atendem a uma condição definida */
 const filter = array.filter((product) => product.quantity > 1);
-// console.log(filter);
+// console.log({ filter });
+
+/** .reduce -> valor que é repassado para cada uma das iterações e que vai acumulando */
+const reduce = array.reduce((accumulator, product) => {
+  return accumulator + (product.quantity * product.price);
+}, 0);
+// console.log({ reduce });
