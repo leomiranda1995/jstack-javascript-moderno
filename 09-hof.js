@@ -19,3 +19,10 @@ const some = array.some((product) => product.price < 1000);
 /** .every -> verifica se todos os elementos cumprem a regra da condição */
 const every = array.every((product) => product.price >= 1000);
 // console.log(every);
+
+/** .map -> percorre o array e executa algo em cima de cada elemento percorrido criando um novo array com o mesmo número de posições */
+const map = array.map((product) => ({
+  ...product,
+  subtotal: product.quantity * product.price,
+}));
+// console.log({ map });
